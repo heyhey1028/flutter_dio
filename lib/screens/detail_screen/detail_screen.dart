@@ -15,29 +15,27 @@ class DetailScreen extends ConsumerWidget {
     final async = ref.watch(gitRepoProvider(id));
 
     return Scaffold(
-      appBar: AppBar(title: Text('Detail Screen')),
+      appBar: AppBar(title: const Text('Detail Screen')),
       body: async.when(
         data: (data) {
           return Hero(
             tag: id,
-            child: Container(
-              child: Column(
-                children: [
-                  Text(data.fullName ?? ''),
-                  Text(data.forksCount.toString()),
-                  Text(data.htmlUrl ?? ''),
-                  Text(data.stargazersCount.toString()),
-                  Text(data.openIssuesCount.toString()),
-                  Text(data.language.toString()),
-                  Text(data.owner!.avatarUrl!.toString()),
-                ],
-              ),
+            child: Column(
+              children: [
+                Text(data.fullName ?? ''),
+                Text(data.forksCount.toString()),
+                Text(data.htmlUrl ?? ''),
+                Text(data.stargazersCount.toString()),
+                Text(data.openIssuesCount.toString()),
+                Text(data.language.toString()),
+                Text(data.owner!.avatarUrl!),
+              ],
             ),
           );
         },
-        error: (e, StackTrace) {
+        error: (e, stackTrace) {
           debugPrint('error:$e');
-          debugPrint('StackTrace:$StackTrace');
+          debugPrint('StackTrace:$stackTrace');
           return Container();
         },
         loading: () {

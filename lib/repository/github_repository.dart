@@ -25,9 +25,11 @@ mixin GitHubRepository {
   static Future<GitRepo> getByID(String id) async {
     final dio = Dio();
     final response = await dio.get<Map<String, dynamic>>(
-        'https://api.github.com/repositories/$id',
-        options: Options(
-            headers: <String, String>{'Content-Type': 'application/json'}));
+      'https://api.github.com/repositories/$id',
+      options: Options(
+        headers: <String, String>{'Content-Type': 'application/json'},
+      ),
+    );
     if (response.statusCode == 200) {
       debugPrint('response: $response');
       debugPrint('data: ${response.data}');
