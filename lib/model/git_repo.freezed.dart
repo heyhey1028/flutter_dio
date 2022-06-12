@@ -229,7 +229,7 @@ class __$$_GitRepoCopyWithImpl<$Res> extends _$GitRepoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_GitRepo implements _GitRepo {
+class _$_GitRepo extends _GitRepo {
   _$_GitRepo(
       {this.id,
       @JsonKey(name: 'full_name') this.fullName,
@@ -240,7 +240,8 @@ class _$_GitRepo implements _GitRepo {
       @JsonKey(name: 'watchers_count') this.watchersCount,
       @JsonKey(name: 'forks_count') this.forksCount,
       @JsonKey(name: 'open_issues_count') this.openIssuesCount,
-      this.owner});
+      this.owner})
+      : super._();
 
   factory _$_GitRepo.fromJson(Map<String, dynamic> json) =>
       _$$_GitRepoFromJson(json);
@@ -325,7 +326,7 @@ class _$_GitRepo implements _GitRepo {
   }
 }
 
-abstract class _GitRepo implements GitRepo {
+abstract class _GitRepo extends GitRepo {
   factory _GitRepo(
       {final int? id,
       @JsonKey(name: 'full_name') final String? fullName,
@@ -337,6 +338,7 @@ abstract class _GitRepo implements GitRepo {
       @JsonKey(name: 'forks_count') final int? forksCount,
       @JsonKey(name: 'open_issues_count') final int? openIssuesCount,
       final Owner? owner}) = _$_GitRepo;
+  _GitRepo._() : super._();
 
   factory _GitRepo.fromJson(Map<String, dynamic> json) = _$_GitRepo.fromJson;
 

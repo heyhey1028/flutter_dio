@@ -21,4 +21,13 @@ class GitRepo with _$GitRepo {
 
   factory GitRepo.fromJson(Map<String, dynamic> json) =>
       _$GitRepoFromJson(json);
+
+  const GitRepo._();
+
+  String sayMyName() {
+    if (fullName == null) {
+      return 'I have no name';
+    }
+    return 'My Name is $fullName';
+  }
 }
