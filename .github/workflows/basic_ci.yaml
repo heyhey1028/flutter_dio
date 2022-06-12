@@ -17,7 +17,7 @@ on:
 jobs:
   flutter_test:
     name: Flutter Test
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     # ソースコードをチェックアウト
     steps:
