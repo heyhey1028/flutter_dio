@@ -76,7 +76,9 @@ class RepositoryCard extends StatelessWidget {
                     child: Text(
                       gitRepo.description ?? '',
                       style: const TextStyle(
-                          fontWeight: FontWeight.w200, color: Colors.grey),
+                        fontWeight: FontWeight.w200,
+                        color: Colors.grey,
+                      ),
                     ),
                   )
                 : Container(),
