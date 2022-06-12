@@ -33,6 +33,9 @@ migrate_working_dir/
 /build/
 # reference: https://dart.dev/guides/libraries/private-files
 pubspec.lock
+# reference: https://fvm.app/docs/getting_started/configuration/#project
+.fvm/flutter_sdk
+
 
 # Web related
 lib/generated_plugin_registrant.dart
