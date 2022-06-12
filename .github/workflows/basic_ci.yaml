@@ -47,7 +47,7 @@ jobs:
         run: flutter analyze
       # テストを実行
       - name: Run flutter test
-        run: flutter test --machine > test/test-report.log
+        run: flutter test --machine > test-report.log
       # テストをGithub Actions上に表示
       - name: Report test
         uses: dorny/test-reporter@v1
@@ -55,5 +55,5 @@ jobs:
         if: always()
         with:
           name: Flutter test report
-          path: test/test-report.log
+          path: test-report.log
           reporter: flutter-json
